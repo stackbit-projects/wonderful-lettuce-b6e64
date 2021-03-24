@@ -1,198 +1,242 @@
-baseurl = "http://example.org/"
+# Page settings
+
+baseurl = "http://pivic.github.io/"
 languageCode = "en-us"
-title = "John Doe Resume"
-theme = "orbit"
+title = "Niklas Pivic's CV"
+theme = "hugo-orbit-theme"
 googleAnalytics = "UA-XXXXXXX-Y"
+
+# Do not build files for websites. Need them? Set to false
 disableRSS = true
 disableSitemap = true
 disable404 = true
-themesDir = "themes"
-baseURL = ""
-publishDir = "public"
 
 [params]
-description = "Hugo Responsive Resume/CV Theme for Developers"
-author = "Pavel Kanyshev"
-styles = "styles.css"
 
-  [params.profile]
-  name = "John Doe"
-  tagline = "Full Stack Developer"
-  avatar = "profile.png"
+# Meta
+    description = "Hugo Responsive Resume/CV Theme for Developers"
+    author = "Pavel Kanyshev"
 
-  [params.contact]
-  enable = true
+# Theme styles
 
-    [[params.contact.list]]
-    class = "email"
-    icon = "fa-envelope"
-    url = "mailto: yourname@email.com"
-    title = "john.doe@website.com"
+    # The original template comes with 6 colour schemes. You may choose styles below.
+    # "styles.css", "styles-2.css", "styles-3.css", "styles-4.css", "styles-5.css", "styles-6.css"
+    # are available. Also the source LESS files are included so
+    # it’s quick and easy to change the styling and colour scheme.
 
-    [[params.contact.list]]
-    class = "phone"
-    icon = "fa-phone"
-    url = "tel:+1234567890"
-    title = "+1234567890"
+    styles = "styles-6.css"
 
-    [[params.contact.list]]
-    class = "website"
-    icon = "fa-globe"
-    url = "//portfoliosite.com"
-    title = "portfoliosite.com"
+# Sidebar sections
 
-    [[params.contact.list]]
-    class = "linkedin"
-    icon = "fa-linkedin"
-    url = "//linkedin.com/in/johndoe"
-    title = "linkedin.com/in/johndoe"
+    # Profile section
+    [params.profile]
+        name = "Niklas Pivic"
+        tagline = "Technical Writer"
+        avatar = "nik.png"
 
-    [[params.contact.list]]
-    class = "github"
-    icon = "fa-github"
-    url = "//github.com/username"
-    title = "github.com/username"
+    # Contact section
+    [params.contact]
+        enable = true
 
-    [[params.contact.list]]
-    class = "twitter"
-    icon = "fa-twitter"
-    url = "//twitter.com/username"
-    title = "@twittername"
+        [[params.contact.list]]
+        class = "email"
+        icon = "fa-envelope"
+        url = "mailto:niklas@pivic.se"
+        title = "niklas@pivic.se"
 
-  [params.education]
-  enable = true
-  title = "Education"
+        [[params.contact.list]]
+        class = "linkedin"
+        icon = "fa-linkedin"
+        url = "//linkedin.com/in/pivic"
+        title = "linkedin.com/in/pivic"
 
-    [[params.education.list]]
-    degree = "MSc in Computer Science"
-    college = "University of London"
-    dates = "2006 - 2010"
+        [[params.contact.list]]
+        class = "github"
+        icon = "fa-github"
+        url = "//github.com/pivic"
+        title = "github.com/pivic"
 
-    [[params.education.list]]
-    degree = "BSc in Applied Mathematics"
-    college = "Bristol University"
-    dates = "2007 - 2011"
+    # Education section
+    [params.education]
+        enable = false
+        title = "Education"
 
-  [params.language]
-  enable = true
-  title = "Languages"
+        [[params.education.list]]
+        degree = "MSc in Computer Science"
+        college = "University of London"
+        dates = "2006 - 2010"
 
-    [[params.language.list]]
-    language = "English"
-    level = "Native"
+        [[params.education.list]]
+        degree = "BSc in Applied Mathematics"
+        college = "Bristol University"
+        dates = "2007 - 2011"
 
-    [[params.language.list]]
-    language = "French"
-    level = "Professional"
+    # Languages section
+    [params.language]
+        enable = true
+        title = "Languages"
 
-    [[params.language.list]]
-    language = "Russian"
-    level = "Professional"
+        [[params.language.list]]
+        language = "English"
+        level = "Natively"
 
-  [params.interests]
-  enable = true
-  title = "Interests"
+        [[params.language.list]]
+        language = "Swedish"
+        level = "Natively"
 
-    [[params.interests.list]]
-    interest = "Climbing"
+        [[params.language.list]]
+        language = "Spanish"
+        level = "Basics"
 
-    [[params.interests.list]]
-    interest = "Snowboarding"
+    # Interests section
+    [params.interests]
+        enable = false
+        title = "Interests"
 
-    [[params.interests.list]]
-    interest = "Cooking"
+        [[params.interests.list]]
+        interest = "Reading"
 
-  [params.summary]
-  enable = true
-  icon = "fa-user"
-  title = "Career Profile"
-  summary = "**Summarise your career here** lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu."
+        [[params.interests.list]]
+        interest = "Music"
 
-  [params.experiences]
-  enable = true
-  icon = "fa-briefcase"
-  title = "Experiences"
+        [[params.interests.list]]
+        interest = "Film"
 
-[[params.jobs.list]]
-position = "Lead Developer"
-dates = "2015 - Present"
-company = "Startup Hubs, San Francisco"
-details = """
-**Describe your role here** lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.
+# Main body sections
 
- Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."""
+    # You may use markdown in summary, details and intro fields. But don't overdose, it's resume!:)
 
-[[params.jobs.list]]
-position = "Senior Software Engineer"
-dates = "2014 - 2015"
-company = "Google, London"
-details = "**Describe your role here** lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem."
+    # Summary section
+    [params.summary]
+        enable = true
+        icon = "fa-user"
+        title = "Career Profile"
+        summary = "I create and maintain different types of technical content for products while naturally integrating with different types of software-development teams. I easily engage with different types of departments to get information that I need. I create varying types of content, for example, user guides, technical descriptions, embedded documentation, and user-interface copy. My content is created for different types of audiences, ranging from beginners to experts in different professions.\n\n To create, I use everything from [Markdown](https://en.wikipedia.org/wiki/Markdown) and [XML](https://en.wikipedia.org/wiki/XML) to [Paligo](https://paligo.net) and Microsoft Word.\n\n My expertise lies in simplifying the complicated so that anybody can understand it.\n\n I use standards and frameworks to write briefly and consistently to make humans quickly and thoroughly understand what they read."
 
-[[params.jobs.list]]
-position = "UI Developer"
-dates = "2012 - 2014"
-company = "Amazon, London"
-details = "**Describe your role here** lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem."
+    # Experiences section
+    [params.experiences]
+        enable = true
+        icon = "fa-briefcase"
+        title = "Experiences"
 
-  [params.projects]
-  enable = true
-  icon = "fa-archive"
-  title = "Projects"
-  intro = "**You can list your side projects or open source libraries in this section.** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus"
+        [[params.jobs.list]]
+        position = "Technical Writer"
+        dates = "2018-Present"
+        company = "Snow Software"
+        details = "Snow Software is a cutting-edge software-development company that leads the field of software asset management. I create and maintain different types of content and solutions for the development teams that I am part of. The work is diverse and I often invent creative solutions to complex problems. I adhere to documentation standards in my writing, for example, [The Microsoft Writing Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/) and [The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html), as well as having created the technical-writing tone of voice. I initiated the creation of our company-wide glossary.\n\n I work according to [scrum](https://en.wikipedia.org/wiki/Scrum_(software_development)) and [agile](https://en.wikipedia.org/wiki/Agile_software_development)."
 
-    [[params.projects.list]]
-    title = "Hugrid"
-    url = "https://github.com/aerohub/hugrid"
-    tagline = "Grid theme for Hugo. It's a kind of boilerplate to perform anyone or anything quickly. Portfolio, collection, bookmarks, contacts and so on"
+        [[params.jobs.list]]
+        position = "Technical Support Specialist"
+        dates = "2012-2018"
+        company = "Snow Software"
+        details = "I provided technical support both regarding the products that Snow Software developed and the internal IT environment. I experienced company growth from 40 to 800 people and trained support staff, built the knowledge base from scratch, and performed different types if IT- and quality-related testing and software implementations."
 
-    [[params.projects.list]]
-    title = "Simple FAQ Theme for Hugo"
-    url = "https://github.com/aerohub/hugo-faq-theme"
-    tagline = "Simple FAQ Theme for Hugo. You may use this theme for building very simple FAQs or note lists."
+        [[params.jobs.list]]
+        position = "Control and Maintenance Technician"
+        dates = "2010-2012"
+        company = "Anticimex"
+        details = "Anticimex is the Nordic leader in pest control and had many different types of offices and types of users all over Sweden, all of which were serviced by myself. I installed and maintained servers, clients, software, and the network infrastructure. I was responsible for the company-wide backup solution. I created and performed IT-related tests, quality assurance, software migrations (e.g. Microsoft Windows XP to Windows 7 and Microsoft Office 2003 to Office 2007), software packaging and distribution, project management, and wrote technical documentation. Anticimex adhered to [the ITIL framework](https://en.wikipedia.org/wiki/ITIL), which incorporated all IT work."
 
-    [[params.projects.list]]
-    title = "Hugo Identity"
-    url = "https://github.com/aerohub/hugo-identity-theme"
-    tagline = "Little profile/card-style template for Hugo."
+       [[params.jobs.list]]
+        position = "Network Administrator"
+        dates = "2003-2010"
+        company = "The Swedish Social Services in Stockholm (Socialtjänstförvaltningen)"
+        details = "Four colleagues and myself controlled the entire IT environment for two different government entities: Socialtjänstförvaltningen and Miljöförvaltningen. I installed and maintained all servers, clients, network infrastructure, and printers. I packaged and distributed software for our users, supported them, performed IT-related tests, quality assurance, and created technical documentation. I was completely responsible for one network with 500 users in almost sixty physical locations. I trained users in Microsoft Office and created e-learning classes that were used by hundreds of users."
 
-    [[params.projects.list]]
-    title = "Orbit"
-    url = "https://github.com/aerohub/hugo-orbit-theme"
-    tagline = "Hugo Resume/CV Theme for Developers."
+       [[params.jobs.list]]
+        position = "Internal Support Logistics Manager"
+        dates = "2002 (three months)"
+        company = "Ericsson"
+        details = "I ensured hardware availability and software installation. I provided second-line support."
 
-    [[params.projects.list]]
-    title = "Me"
-    url = "https://github.com/aerohub/hugo-me-theme"
-    tagline = "A simple responsive Hugo theme for personal site."
+       [[params.jobs.list]]
+        position = "Network Administrator"
+        dates = "2002 (eight months)"
+        company = "Läkarnätet AB"
+        details = "I was the sole network and IT technician. I maintained all servers, clients, and software, e.g. handled user accounts and maintained Microsoft Exchange Server. I was responsible for and personally handled all software support and software purchases."
 
-  [params.skills]
-  enable = true
-  icon = "fa-rocket"
-  title = "Skills & Proficiency"
+       [[params.jobs.list]]
+        position = "IT Support Technician"
+        dates = "2000-2002"
+        company = "Net Insight"
+        details = "I performed junior IT technician duties: supported users in different countries, upgraded hardware, and performed much troubleshooting."
 
-    [[params.skills.list]]
-    skill = "Python & Django"
-    level = "98%"
+       [[params.jobs.list]]
+        position = "IT Support Specialist"
+        dates = "1999-2000"
+        company = "Ericsson/Compaq"
+        details = "I provided last-level support duties in regard to Microsoft Office for 12,000 users."
 
-    [[params.skills.list]]
-    skill = "Javascript & jQuery"
-    level = "98%"
+    # Projects section
+    [params.projects]
+        enable = false
+        icon = "fa-archive"
+        title = "Training"
+        intro = "**You can list your side projects or open source libraries in this section.** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus"
 
-    [[params.skills.list]]
-    skill = "Angular"
-    level = "95%"
+        [[params.projects.list]]
+        title = "Hugrid"
+        url = "https://github.com/aerohub/hugrid"
+        tagline = "Grid theme for Hugo. It's a kind of boilerplate to perform anyone or anything quickly. Portfolio, collection, bookmarks, contacts and so on"
 
-    [[params.skills.list]]
-    skill = "HTML5 & CSS"
-    level = "95%"
+        [[params.projects.list]]
+        title = "Simple FAQ Theme for Hugo"
+        url = "https://github.com/aerohub/hugo-faq-theme"
+        tagline = "Simple FAQ Theme for Hugo. You may use this theme for building very simple FAQs or note lists."
 
-    [[params.skills.list]]
-    skill = "Ruby on Rails"
-    level = "75%"
+        [[params.projects.list]]
+        title = "Hugo Identity"
+        url = "https://github.com/aerohub/hugo-identity-theme"
+        tagline = "Little profile/card-style template for Hugo."
 
-    [[params.skills.list]]
-    skill = "Sketch & Photoshop"
-    level = "60%"
+        [[params.projects.list]]
+        title = "Orbit"
+        url = "https://github.com/aerohub/hugo-orbit-theme"
+        tagline = "Hugo Resume/CV Theme for Developers."
 
-  [params.footer]
-  copyright = ""
+        [[params.projects.list]]
+        title = "Me"
+        url = "https://github.com/aerohub/hugo-me-theme"
+        tagline = "A simple responsive Hugo theme for personal site."
+
+    # Skills section
+    [params.skills]
+        enable = false
+        icon = "fa-rocket"
+        title = "Skills & Proficiency"
+
+        [[params.skills.list]]
+        skill = "Python & Django"
+        level = "98%"
+                
+        [[params.skills.list]]
+        skill = "Javascript & jQuery"
+        level = "98%"
+
+        [[params.skills.list]]
+        skill = "Angular"
+        level = "95%"
+
+        [[params.skills.list]]
+        skill = "HTML5 & CSS"
+        level = "95%"
+
+        [[params.skills.list]]
+        skill = "Ruby on Rails"
+        level = "75%"
+
+        [[params.skills.list]]
+        skill = "Sketch & Photoshop"
+        level = "60%"
+
+    # Footer section
+
+    # The original template is released under the Creative Commons Attribution 3.0 License.
+    # Please keep the original attribution link when using for your own project.
+    # If you'd like to use the template without the attribution,
+    # you can check out other license options via template author's website: themes.3rdwavemedia.com
+    # 
+    # As for Hugo port you may rewrite the "Ported for..." line with setting your name below.
+
+    [params.footer]
+        copyright = ""
